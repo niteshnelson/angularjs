@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html ng-app="techMeterApp">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>TECHMETER Website</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/navbar.css" rel="stylesheet">
+
+
+    <script src="js/angular.js"></script>
+    <script src="js/app/angular-route.js"></script>
+    <script src="js/app/app.js"></script>
+    <script src="/fusioncharts/fusioncharts.charts.js"></script>
+    <script src="/fusioncharts/fusioncharts.gantt.js"></script>
+    <script src="/fusioncharts/fusioncharts.js"></script>
+    <script src="/fusioncharts/fusioncharts.maps.js"></script>
+    <script src="/fusioncharts/fusioncharts.powercharts.js"></script>
+    <script src="/fusioncharts/fusioncharts.ssgrid.js"></script>
+    <script src="/fusioncharts/fusioncharts.treemap.js"></script>
+    <script src="/fusioncharts/fusioncharts.widgets.js"></script>
+    <script src="/fusioncharts/fusioncharts.zoomscatter.js"></script>
+
+    <script src="js/app/angular-fusioncharts.min.js"></script>
+    <script src="js/app/myprofile/profile-module.js"></script>
+    <script src="js/app/myprofile/profile-factory.js"></script>
+    <script src="js/app/myprofile/profile-controller.js"></script>
+    <script src="js/app/home/home-module.js"></script>
+    <script src="js/app/home/home-controller.js"></script>
+    <script src="js/app/dashboard/dashboard-module.js"></script>
+    <script src="js/app/dashboard/dashboard-controller.js"></script>
+    <script src="js/app/mentor/mentor-module.js"></script>
+    <script src="js/app/mentor/mentor-controller.js"></script>
+    <script src="js/app/talent/talent-module.js"></script>
+    <script src="js/app/talent/talent-controller.js"></script>
+    <script src="js/app/training/training-module.js"></script>
+    <script src="js/app/training/training-controller.js"></script>
+    
+    
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Static navbar -->
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="#!/home">Home</a></li>
+                        <li><a href="#!/profile">My Profile</a></li>
+                        <li><a href="#!/mentor">Find a Mentor</a></li>
+                        <li><a href="#!/training">Training</a></li>
+                        <li><a href="#!/talent">Search Talent</a></li>
+                        <li><a href="#!/dashboard">Dashboard</a></li>
+                        
+                    </ul>
+                    
+                <img src="img/techmeter.png" a href="#!/home" style="float:right" />
+
+                </div><!--/.nav-collapse -->
+            </div><!--/.container-fluid -->
+
+            <div ng-view="">
+                <!--placeholder-->
+            </div>
+        </nav>
+
+
+    </div> <!-- /container -->
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+
+   
+</body>
+</html>

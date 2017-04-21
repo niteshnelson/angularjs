@@ -1,0 +1,86 @@
+﻿<div>
+    
+    <h4> Set up your profile here !!</h4>
+
+    <form name="profileForm">
+        <br />
+        <br />
+        <label> Employee Name : <input ng-model="newSkill.empName" required pattern="^[A-Z][a-z]+" /></label>
+        <br />
+        <br />
+        <label> Job Role :</label>
+
+        <select>
+            <option ng-repeat="role in jobRoles">{{role}}</option>
+        </select>
+        <br />
+        <br />
+        <label> Skill Area :</label>
+        <select ng-model="newSkill.area">
+            <option ng-repeat="(key, value) in skillAreaMap">{{key}}</option>
+        </select>
+        <label> Skill Name :</label>
+        <select ng-model="newSkill.name">
+            <option ng-repeat="item in skillAreaMap[newSkill.area]">{{item}}</option>
+        </select>
+        <label> Proficiency :</label>
+        <select ng-model="newSkill.proficiency">
+            <option ng-repeat="level in proficiency">{{level}}</option>
+        </select>
+        <label> Months of experience : <input required type="number" ng-model="newSkill.experience" /></label>
+
+        <br />
+        <br />
+        <label> Would you like to be a mentor : <input type="checkbox" ng-model="newSkill.mentorFlag" /></label>
+        <br />
+        <br />
+        <label> Would you like your profile to be available for hiring manager : <input type="checkbox" ng-model="newSkill.hiringFlag" /></label>
+
+        <br />
+        <br />
+        <button ng-click="addSkill()">Add</button>
+        <br />
+        <br />
+
+
+
+
+        <div>
+
+            <label> Skills View</label>
+            <table>
+
+                <tr>
+                    <th>Employee</th>
+                    <th>Area</th>
+                    <th>Name</th>
+                    <th>Proficiency</th>
+                    <th>Experience in months</th>
+                    <th>Interested in mentoring</th>
+                    <th>Profile visible for hiring managers</th>
+                    <th>Remove?</th>
+
+                </tr>
+
+                <tr ng-repeat="skill in skillList  | filter:newSkill.empName">
+                    <td>{{ skill.empName }}</td>
+                    <td>{{ skill.area }}</td>
+                    <td>{{ skill.name }}</td>
+                    <td>{{ skill.proficiency }}</td>
+                    <td>{{ skill.experience }}</td>
+                    <td>{{ skill.mentorFlag }}</td>
+                    <td>{{ skill.hiringFlag }}</td>
+                    <td>
+                        <button ng-click="removeSkill(skill)">Remove</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <br />
+        <br />
+        <button ng-click="commitToServer()">Commit</button>
+        <br />
+        <br />
+    </form>
+</div>

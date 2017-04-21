@@ -1,0 +1,49 @@
+﻿<div>
+    <h4> Find talent here !!</h4>
+    <br />
+    <br />
+    <label> Skill Area :</label>
+    <select ng-model="skillArea">
+        <option ng-repeat="(key, value) in skillAreaMap">{{key}}</option>
+    </select>
+    <label> Skill Name :</label>
+    <select ng-model="skillName">
+        <option ng-repeat="item in skillAreaMap[skillArea]">{{item}}</option>
+    </select>
+    <label> Proficiency :</label>
+    <select ng-model="skillProficiency">
+        <option ng-repeat="level in proficiency">{{level}}</option>
+    </select>
+
+    <br />
+    <br />
+
+    <div>
+
+        <label> Employees List</label>
+        <table>
+
+            <tr>
+                <th>Employee Name</th>
+                <th>Area</th>
+                <th>Skill Name</th>
+                <th>Proficiency</th>
+                <th>Select Employee</th>
+            </tr>
+
+            <tr ng-repeat="skill in skillList | filter:{hiringFlag:true, area:skillArea, name:skillName, proficiency:skillProficiency}">
+                <td>{{skill.empName}}</td>
+                <td>{{skill.area }}</td>
+                <td>{{skill.name }}</td>
+                <td>{{skill.proficiency }}</td>
+                <td>
+                    <input type="checkbox" ng-model="selectedEmployee" />
+                </td>
+            </tr>
+        </table>
+
+        <br />
+        <br />
+        <button ng-click="sendRequestToMentor()">Show Interest</button>
+    </div>
+</div>
